@@ -1,3 +1,11 @@
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
 #include <stdio.h>
 #define MAXNUM 10U
 int last=0;
@@ -8,7 +16,7 @@ int insert(int aPos, int* aArray,int aValue)
     
     if(aPos>=last)
     {
-        printf("invalid")
+        printf("invalid");
         return -1;
     }
     
@@ -21,6 +29,7 @@ int insert(int aPos, int* aArray,int aValue)
     {
         aArray[i]=aArray[i-1];
     }
+    return 0;
 }
 
 void display(int* aArray)
