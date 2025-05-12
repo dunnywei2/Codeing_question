@@ -1,4 +1,3 @@
-// Online C compiler to run C program online
 #include <stdio.h>
 #define MAXNUM 10U
 int last=0;
@@ -24,14 +23,28 @@ int insert(int aPos, int* aArray,int aValue)
     }
 }
 
+void display(int* aArray)
+{
+    for(int i=0;i<10;i++)
+    {
+       printf("pos %d content %d \n",i,aArray[i]);
+        
+    }
+}
+
 
 int main() {
     // Write C code here
     int array[MAXNUM]={1,2,3,4,5,6,7,8,9,10};
     
     last=10;
-    
+    display(array);
+
     printf("Try programiz.pro _%d",last);
+    
+    insert(0,array,0);
+    display(array);
+    
 
     return 0;
 }
