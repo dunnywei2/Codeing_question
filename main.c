@@ -34,6 +34,8 @@ int insert(int aPos, int* aArray,int aValue)
         else{
            aArray[i]=aArray[i-1];
         }
+        
+        //i==9, aPos=0,array[9]=array[8]
     }
     return 0;
 }
