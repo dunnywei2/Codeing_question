@@ -57,7 +57,7 @@ int main() {
     last=10;
     display(array);
 
-    printf("Try programiz.pro _%d",last);
+    printf("Try programiz.pro _%d \n",last);
     
     insert(0,array,0);
     display(array);
