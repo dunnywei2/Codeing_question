@@ -27,7 +27,13 @@ int insert(int aPos, int* aArray,int aValue)
     
     for(int i=(last-1);i>=aPos;i--)
     {
-        aArray[i]=aArray[i-1];
+        if(i==aPos)
+        {
+            aArray[i]=aValue;
+        }
+        else{
+           aArray[i]=aArray[i-1];
+        }
     }
     return 0;
 }
