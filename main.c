@@ -35,7 +35,8 @@ int insert(int aPos, int* aArray,int aValue)
            aArray[i]=aArray[i-1];
         }
         
-        //i==9, aPos=0,array[9]=array[8]
+        //i==9, aPos=8,array[9]=array[8]
+        //i==8, aPos=8,array[8]=0
     }
     return 0;
 }
@@ -59,7 +60,7 @@ int main() {
 
     printf("Try programiz.pro _%d \n",last);
     
-    insert(0,array,0);
+    insert(8,array,0);
     display(array);
     
 
