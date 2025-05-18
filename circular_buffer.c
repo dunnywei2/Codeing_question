@@ -13,11 +13,12 @@ typedef struct {
 uint8_t buffer[BUFFER_SIZE];
 int head;
 int tail;
+uint8_t counter;
 } CircularBuffer;
 
 int isBufferFull(CircularBuffer * cb)
 {
-   if(cb->tail==cb->head)
+   if((cb->tail==cb->head)&&(cb->counter==BUFFER_SIZE))
    {
        return 1;
    }
@@ -27,14 +28,16 @@ int isBufferFull(CircularBuffer * cb)
  void initBuffer(CircularBuffer * cb) {
 	cb-> head =0;
 	cb-> tail =0;
+	cb->counter=0;
  }
 
 void writeBuffer(CircularBuffer * cb, uint8_t data) {
-   if((!isBufferFull(cb))||((cb->tail==0)&&(cb->head==0)))
+   if(!isBufferFull(cb))
    {
 	printf("adding data\n");
    	cb-> buffer[cb-> head] = data;
 	cb-> head = (cb-> head +1) % BUFFER_SIZE;
+	cb->counter++;
 	return;
    }
    printf("buffer is full OR not in intial state\n");
@@ -54,7 +57,8 @@ int main()
     initBuffer(&cBuffer);
     printf("Hello World first\n");
 
-    writeBuffer(&cBuffer,1);	
+    for(int i=0;i<BUFFER_SIZE+1;i++)
+       writeBuffer(&cBuffer,i);	
 
 
     return 0;
