@@ -1,4 +1,3 @@
-
 //https://www.youtube.com/watch?v=uvD9_Wdtjtw
 /*other people's solution*/
 #include <stdio.h>
@@ -33,7 +32,6 @@ int isBufferFull(CircularBuffer * cb)
 }
 
  void initBuffer(CircularBuffer * cb) {
-	 cb->buffer={0};
 	cb-> head =0;
 	cb-> tail =0;
 	cb->counter=0;
@@ -89,7 +87,7 @@ int main()
     for(int i=0;i<BUFFER_SIZE+1;i++)
        writeBuffer(&cBuffer,i);	
 
-    dispaly(&cBuffer);
+    display(&cBuffer);
 
     return 0;
 }
