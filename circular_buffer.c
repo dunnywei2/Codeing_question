@@ -1,4 +1,4 @@
-
+//https://www.youtube.com/watch?v=uvD9_Wdtjtw
 /*other people's solution*/
 #include <stdio.h>
 #include <stdint.h>
@@ -15,14 +15,31 @@ int head;
 int tail;
 } CircularBuffer;
 
+int isBufferFull(CircularBuffer * cb)
+{
+   if(cb->tail==cb->head)
+   {
+       return 1;
+   }
+   return 0;
+}
+
  void initBuffer(CircularBuffer * cb) {
 	cb-> head =0;
 	cb-> tail =0;
  }
 
 void writeBuffer(CircularBuffer * cb, uint8_t data) {
-	cb-> buffer[cb-> head] = data;
+   if((!isBufferFull(cb))||((cb->tail==0)&&(cb->head==0)))
+   {
+	printf("adding data\n");
+   	cb-> buffer[cb-> head] = data;
 	cb-> head = (cb-> head +1) % BUFFER_SIZE;
+	return;
+   }
+   printf("buffer is full OR not in intial state\n");
+   
+   
  }
 
 uint8_t readBuffer(CircularBuffer * cb) {
@@ -35,7 +52,10 @@ int main()
 {
     CircularBuffer cBuffer;
     initBuffer(&cBuffer);
-    printf("Hello World");
+    printf("Hello World first\n");
+
+    writeBuffer(&cBuffer,1);	
+
 
     return 0;
 }
