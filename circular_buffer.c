@@ -89,7 +89,18 @@ int main()
       writeBuffer(&cBuffer,i);
     
      for(int i=0;i<2;i++)
-       readBuffer(&cBuffer);	
+       readBuffer(&cBuffer);
+       
+     for(int i=0;i<2;i++)
+      writeBuffer(&cBuffer,20);
+      
+
+      
+    for(int i=0;i<1;i++)
+      readBuffer(&cBuffer);
+    
+    for(int i=0;i<1;i++)
+      writeBuffer(&cBuffer,30);
 
     display(&cBuffer);
 
