@@ -2,6 +2,7 @@
 /*other people's solution*/
 #include <stdio.h>
 #include <stdint.h>
+#include <string.h>
 
 #define BUFFER_SIZE 8
 
@@ -32,6 +33,7 @@ int isBufferFull(CircularBuffer * cb)
 }
 
  void initBuffer(CircularBuffer * cb) {
+    // memset((void*)cb->buffer,0,sizeof(cb->buffer));
 	cb-> head =0;
 	cb-> tail =0;
 	cb->counter=0;
@@ -81,11 +83,13 @@ int main()
     initBuffer(&cBuffer);
     printf("Hello World first\n");
 
-    for(int i=0;i<2;i++)
-       readBuffer(&cBuffer);	
+   
 
     for(int i=0;i<BUFFER_SIZE+1;i++)
-       writeBuffer(&cBuffer,i);	
+      writeBuffer(&cBuffer,i);
+    
+     for(int i=0;i<2;i++)
+       readBuffer(&cBuffer);	
 
     display(&cBuffer);
 
