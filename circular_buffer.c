@@ -1,5 +1,4 @@
-//https://www.youtube.com/watch?v=uvD9_Wdtjtw
-/*other people's solution*/
+
 //https://www.youtube.com/watch?v=uvD9_Wdtjtw
 /*other people's solution*/
 #include <stdio.h>
@@ -34,6 +33,7 @@ int isBufferFull(CircularBuffer * cb)
 }
 
  void initBuffer(CircularBuffer * cb) {
+	 cb->buffer={0};
 	cb-> head =0;
 	cb-> tail =0;
 	cb->counter=0;
@@ -66,6 +66,17 @@ uint8_t readBuffer(CircularBuffer * cb) {
 	return data;
 }
 
+void display(CircularBuffer * cb)
+{
+   for(int i=0;i<BUFFER_SIZE;i++)
+  {
+	  printf("buffer[i] is %d_%d\n",cb->buffer[i],i);
+  }
+  printf("counter %d \n",cb->counter);
+  printf("tail %d \n",cb->tail);
+  printf("head %d \n",cb->head);			   
+}
+
 int main()
 {
     CircularBuffer cBuffer;
@@ -78,6 +89,7 @@ int main()
     for(int i=0;i<BUFFER_SIZE+1;i++)
        writeBuffer(&cBuffer,i);	
 
+    dispaly(&cBuffer);
 
     return 0;
 }
