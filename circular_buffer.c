@@ -1,11 +1,9 @@
 //https://www.youtube.com/watch?v=uvD9_Wdtjtw
 /*other people's solution*/
-#include <stdio.h>
-#include <stdint.h>
-
-
+//https://www.youtube.com/watch?v=uvD9_Wdtjtw
 /*other people's solution*/
 #include <stdio.h>
+#include <stdint.h>
 
 #define BUFFER_SIZE 8
 
@@ -19,7 +17,7 @@ uint8_t counter;
 
 int isBufferEmpty(CircularBuffer * cb)
 {
-   if((cb->tail==cb->head)&&cb->counter==0))
+   if((cb->tail==cb->head)&&(cb->counter==0))
    {
        return 1;
    }
@@ -75,7 +73,7 @@ int main()
     printf("Hello World first\n");
 
     for(int i=0;i<2;i++)
-       readBuffer(&cBuffer,i);	
+       readBuffer(&cBuffer);	
 
     for(int i=0;i<BUFFER_SIZE+1;i++)
        writeBuffer(&cBuffer,i);	
