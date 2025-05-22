@@ -19,12 +19,6 @@ int insert(int aPos, int* aArray,int aValue)
         printf("invalid");
         return -1;
     }
-    
-    // for(int i=aPos;i<last;i++)
-    // {
-    //     pos[]=pos[];
-    // }
-    
     for(int i=(last-1);i>=aPos;i--)
     {
         if(i==aPos)
@@ -34,9 +28,6 @@ int insert(int aPos, int* aArray,int aValue)
         else{
            aArray[i]=aArray[i-1];
         }
-        
-        //i==9, aPos=8,array[9]=array[8]
-        //i==8, aPos=8,array[8]=0
     }
     return 0;
 }
