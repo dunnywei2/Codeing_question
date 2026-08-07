@@ -32,6 +32,18 @@ int push(int value,int *array)
    return 0;
 }
 
+int pop(int *array)
+{
+   int r_value=-1;
+   printf("t_index before %d content %d\r\n",t_index,array[t_index]);
+   r_value=array[t_index];
+   array[t_index]=-100;
+   t_index++;
+   printf("t_index before %d content %d\r\n",t_index,r_value);
+
+   return r_value;
+}
+
 int main()
 {
    int a[10];
