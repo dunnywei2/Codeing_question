@@ -16,7 +16,12 @@ int push(int value,int *array)
 {
    if(full_flag==1) //full
    {
+     printf("Buffer is full\n");
      return -1;
+   }
+   else if(h_index==t_index)
+   {
+      full_flag=1;
    }
 //   printf("here 1 \n");
 
@@ -25,6 +30,8 @@ int push(int value,int *array)
 //         full_flag=1;
 //         return -1;
 //   }
+   
+   
    array[h_index]=value;
    h_index=(h_index+1)%gLength;
    printf("h_index is %d content %d\n\r",h_index,array[h_index]);
