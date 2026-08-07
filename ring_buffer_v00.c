@@ -2,7 +2,8 @@
 
 #include <stdio.h>
 
-int full_flag=0U; //default as false
+int full_flag=0; //default as false
+int empty_flage=0;//default as false
 
 static int gLength=8;
 
@@ -43,6 +44,13 @@ int pop(int *array)
 {
    int r_value=-1;
    printf("t_index before %d content %d\r\n",t_index,array[t_index]);
+
+   if(empty_flage==1)
+   {
+      prtinf("buffer is empty\n);
+      return r_value;
+   }
+   
    r_value=array[t_index];
    array[t_index]=-100;
    t_index++;
