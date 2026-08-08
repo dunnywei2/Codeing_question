@@ -15,11 +15,11 @@ int t_index=0;
 
 int isEmpty()
 {
-   if((h_index==t_index)&&(full_flag==0))
+   if((h_index==t_index)&&(full_flag==0)) //MOST importa part
    {
-      return -1;
-   }
       return 1;
+   }
+      return 0;
 }
 
 int push(int value,int *array)
@@ -64,6 +64,8 @@ int pop(int *array)
    array[t_index]=-100;
    t_index++;
    printf("t_index before %d content %d\r\n",t_index,r_value);
+
+   full_flag=0;
 
    return r_value;
 }
