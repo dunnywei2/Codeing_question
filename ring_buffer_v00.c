@@ -13,6 +13,15 @@ int *r=NULL;
 int h_index=0;
 int t_index=0;
 
+int isEmpty()
+{
+   if((h_index==t_index)&&(full_flag==0))
+   {
+      return -1;
+   }
+      return 1;
+}
+
 int push(int value,int *array)
 {
    if(full_flag==1) //full
@@ -45,7 +54,7 @@ int pop(int *array)
    int r_value=-1;
    printf("t_index before %d content %d\r\n",t_index,array[t_index]);
 
-   if(empty_flage==1)
+   if(isEmpty()==1)
    {
       prtinf("buffer is empty\n);
       return r_value;
